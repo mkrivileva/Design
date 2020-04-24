@@ -1,0 +1,4 @@
+#Fri Apr 24 20:39:46 SAMT 2020
+base.0=/home/maria/UnityProjects/UI/Temp/gradleOut/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex
