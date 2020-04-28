@@ -109,6 +109,7 @@ namespace FantomLib
         //Set message dynamically and show dialog (current message will be overwritten)
         public void Show(string message)
         {
+            message = message.Replace('&', '\n');
             this.message = message;
             Show();
         }
