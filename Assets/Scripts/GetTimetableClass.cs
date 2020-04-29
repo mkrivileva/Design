@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Diagnostics;
+using System.Security.Policy;
+using FantomLib;
 
 public class GetTimetableClass : MonoBehaviour
 {
@@ -16,27 +18,33 @@ public class GetTimetableClass : MonoBehaviour
     public GameObject scrollContent;
     public GameObject scrollItemPrefab;
 
-    public void Start()
+    public void ClickDateBtn(int state)
     {
-        ftext.text = "Start";
-        //Debug.Log("Start");
+        scrollContent.transform.DetachChildren();
+        var date = System.DateTime.Now;
+        string strdate;
+        if (state == 0) // today option
+            strdate = date.ToString("dd.MM.yyyy");
+        else if (state == 1) //tomorrow option
+            strdate = date.AddDays(1).ToString("dd.MM.yyyy");
+        else
+        {
+            //DatePickerController datePicker = new DatePickerController();
+            //datePicker.resultDateFormat = "dd.MM.yyyy";
+            //datePicker.Show();
+            return;
+        }
+        SendRequest(strdate);
     }
 
-    public void SetGet(string date)
-    {
-        ftext.text = date;
-        if (from.text.Length != 0 && to.text.Length != 0)
-            StartCoroutine(GetTimetable(date.ToString()));
-    }
-
-    public void SetGet(object date)
+    public void SendRequest(object date)
     {
         ftext.text = date.ToString();
         if (from.text.Length != 0 && to.text.Length != 0)
             StartCoroutine(GetTimetable(date.ToString()));
     }
 
-    public IEnumerator GetTimetable(string date)
+    private IEnumerator GetTimetable(string date)
     {
         ftext.text = "GetTimetable";
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();

@@ -207,9 +207,8 @@
      <Compile Include="Assets\FantomPlugin\FantomLib\Scripts\UI\ToggleButton.cs" />
      <Compile Include="Assets\FantomPlugin\FantomLib\Scripts\UI\ToggleObject.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\Scripts\ChangeTextColor.cs" />
      <Compile Include="Assets\Scripts\GetTimetableClass.cs" />
-     <Compile Include="Assets\Scripts\ItemHandler.cs" />
-     <Compile Include="Assets\Scripts\ScrollScript.cs" />
      <None Include="Assets\FantomPlugin\Plugins\Android\ZXing_LICENSE.txt" />
      <None Include="Assets\FantomPlugin\Demo\Images\fantomPlugin_Icon_Image_Readme.txt" />
      <None Include="Assets\FantomPlugin\Plugins\Android\AndroidManifest-FullPlugin_Portrait.xml" />
