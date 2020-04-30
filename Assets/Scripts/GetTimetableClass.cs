@@ -20,7 +20,7 @@ public class GetTimetableClass : MonoBehaviour
 
     public void ClickDateBtn(int state)
     {
-        scrollContent.transform.DetachChildren();
+        
         var date = System.DateTime.Now;
         string strdate;
         if (state == 0) // today option
@@ -32,6 +32,7 @@ public class GetTimetableClass : MonoBehaviour
 
     public void SendRequest(object date)
     {
+        scrollContent.transform.DetachChildren();
         if (from.text.Length == 0)
         {
             alert.text = "Введите пункт отправления";
