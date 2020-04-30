@@ -66,8 +66,6 @@ namespace FantomLib
         //Returns value when 'OK' pressed.
         private void ReceiveResult(string result)
         {
-            GetTimetableClass getTimetable = new GetTimetableClass();
-            getTimetable.SendRequest(result);
             if (OnResult != null)
                 OnResult.Invoke(result);
         }

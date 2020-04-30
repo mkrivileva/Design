@@ -13,7 +13,7 @@ public class GetTimetableClass : MonoBehaviour
 {
     public InputField from;
     public InputField to;
-    public Text ftext;
+    public Text alert;
     public ScrollRect scrollView;
     public GameObject scrollContent;
     public GameObject scrollItemPrefab;
@@ -25,74 +25,77 @@ public class GetTimetableClass : MonoBehaviour
         string strdate;
         if (state == 0) // today option
             strdate = date.ToString("dd.MM.yyyy");
-        else if (state == 1) //tomorrow option
+        else //tomorrow option
             strdate = date.AddDays(1).ToString("dd.MM.yyyy");
-        else
-        {
-            //DatePickerController datePicker = new DatePickerController();
-            //datePicker.resultDateFormat = "dd.MM.yyyy";
-            //datePicker.Show();
-            return;
-        }
         SendRequest(strdate);
     }
 
     public void SendRequest(object date)
     {
-        ftext.text = date.ToString();
-        if (from.text.Length != 0 && to.text.Length != 0)
-            StartCoroutine(GetTimetable(date.ToString()));
+        if (from.text.Length == 0)
+        {
+            alert.text = "Введите пункт отправления";
+            return;
+        }
+        if (to.text.Length == 0)
+        {
+            alert.text = "Введите пункт назначения";
+            return;
+        }
+        StartCoroutine(GetTimetable(date.ToString()));
     }
 
     private IEnumerator GetTimetable(string date)
     {
-        ftext.text = "GetTimetable";
+        alert.text = "загрузка...";
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-        string routepath = "https://pass.rzd.ru/suggester?lang=ru&compactMode=y&stationNamePart=";
+        string routepathCode = "https://pass.rzd.ru/suggester?lang=ru&compactMode=y&stationNamePart=";
 
         //get code from
-        string pathFrom = routepath + from.text.ToUpper();
-        UnityEngine.Debug.Log(pathFrom);
-        UnityWebRequest www = UnityWebRequest.Get(pathFrom);
-        yield return www.SendWebRequest();
-        if(CheckNetwork(www)) yield break;
-        string code0 = GetCurrentCode(www.downloadHandler.text, from.text.ToUpper());
-        UnityEngine.Debug.Log(code0);
-        ftext.text = code0;
+        string pathFrom = routepathCode + from.text.ToUpper();
+        UnityWebRequest wwwCode = UnityWebRequest.Get(pathFrom);
+        yield return wwwCode.SendWebRequest();
+        if(IsError(wwwCode)) yield break;
+        string code0 = GetCurrentCode(wwwCode.downloadHandler.text, from.text.ToUpper());
+        if (code0 == "err")
+        {
+            alert.text = "Неправильно введён пункт отправления";
+            yield break;
+        }
+        UnityEngine.Debug.Log("code from = " + code0);
 
         //get code to
-        string pathTo = routepath + to.text.ToUpper();
-        UnityEngine.Debug.Log(pathTo);
-        www = UnityWebRequest.Get(pathTo);
-        yield return www.SendWebRequest();
-        if (CheckNetwork(www)) yield break;
-        string code1 = GetCurrentCode(www.downloadHandler.text, to.text.ToUpper());
+        string pathTo = routepathCode + to.text.ToUpper();
+        wwwCode = UnityWebRequest.Get(pathTo);
+        yield return wwwCode.SendWebRequest();
+        if (IsError(wwwCode)) yield break;
+        string code1 = GetCurrentCode(wwwCode.downloadHandler.text, to.text.ToUpper());
+        if (code1 == "err")
+        {
+            alert.text = "Неправильно введён пункт назначения";
+            yield break;
+        }
         UnityEngine.Debug.Log(code1);
-        ftext.text = code1;
 
 
 
         //get RID
         string pathRID = "https://pass.rzd.ru/timetable/public/ru?layer_id=5827&dir=0&tfl=3&checkSeats=1&code0=" + code0 + "&dt0=" + date + "&code1=" + code1;
-        UnityEngine.Debug.Log(pathRID);
         UnityWebRequest wwwRID = UnityWebRequest.Post(pathRID, formData);
         yield return wwwRID.SendWebRequest();
-        yield return new WaitForSeconds((float)0.5);
-        if (CheckNetwork(wwwRID)) yield break;
+        yield return new WaitForSeconds(1);
+        if (IsError(wwwRID)) yield break;
         string rid = GetCurrentRID(wwwRID.downloadHandler.text);
         UnityEngine.Debug.Log(wwwRID.downloadHandler.text);
-        ftext.text = rid;
 
         //get TimeTable
         string pathTimeTable = "https://pass.rzd.ru/timetable/public/ru?layer_id=5827&rid=" + rid;
-        UnityEngine.Debug.Log(pathTimeTable);
         UnityWebRequest timeTable = UnityWebRequest.Post(pathTimeTable, formData);
         yield return timeTable.SendWebRequest();
-        yield return new WaitForSeconds((float)0.5);
-        if (CheckNetwork(timeTable)) { ftext.text = "ERR"; yield break; }
-        //ftext.text = timeTable.downloadHandler.text;
+        yield return new WaitForSeconds(1);
+        if (IsError(timeTable)) yield break;
         UnityEngine.Debug.Log(timeTable.downloadHandler.text);
-        ParseTrainData(timeTable.downloadHandler.text);
+        ParseTrainData(timeTable.downloadHandler.text, date);
 
     }
     string GetCurrentCode(string parseData, string target)
@@ -104,12 +107,12 @@ public class GetTimetableClass : MonoBehaviour
             if (option.IndexOf(target) > -1)
             {
                 var dict = option.Split(new[] {','})
-                .Select(part => part.Split(':'))
-                .ToDictionary(split => split[0], split => split[1]);
+                    .Select(part => part.Split(':'))
+                    .ToDictionary(split => split[0], split => split[1]);
                 return dict["\"c\""];
             }
         }
-        return "NULL";
+        return "err";
     }
 
     string GetCurrentRID(string parseData)
@@ -120,12 +123,11 @@ public class GetTimetableClass : MonoBehaviour
         return dict["\"RID\""];
     }
 
-    bool ParseTrainData(string parseData)
+    bool ParseTrainData(string parseData, string date)
     {
         List<string> options = new List<string>(parseData.Split(new[] { '{', '}' }));
         options.RemoveRange(0, 3);
         options.RemoveRange(options.Count() - 5, 4);
-        ftext.text = "";
         int count = 0;
         Dictionary<string, string> dict, train = new Dictionary<string, string>();
         List<Dictionary<string, string>> cars = new List<Dictionary<string, string>>();
@@ -152,7 +154,12 @@ public class GetTimetableClass : MonoBehaviour
                 }
                 */
             }
-            else if (dict.ContainsKey("\"carDataType\"")) cars.Add(dict);
+            else if (dict.ContainsKey("\"carDataType")) cars.Add(dict);
+            else if (dict.ContainsKey("\"message"))
+            {
+                alert.text = dict["\"message"].Replace("\"", string.Empty) + " " + date;
+                return true;
+            }
             count++;
             
         }
@@ -193,16 +200,16 @@ public class GetTimetableClass : MonoBehaviour
     }
 
 
-    bool CheckNetwork (UnityWebRequest request)
+    bool IsError (UnityWebRequest request)
     {
         if (request.isNetworkError)
         {
-            ftext.text = "NETWORK ERROR";
+            alert.text = "Проверте ваше подключение к сети";
             return true;
         }
         else if (request.isHttpError)
         {
-            ftext.text = "HTTP ERROR";
+            alert.text = "Ошибка подключения к серверу. Пожалуйста, повторите попытку позже";
             return true;
         }
         return false;
