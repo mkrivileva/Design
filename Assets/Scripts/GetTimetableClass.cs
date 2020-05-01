@@ -96,7 +96,6 @@ public class GetTimetableClass : MonoBehaviour
         string pathTimeTable = "https://pass.rzd.ru/timetable/public/ru?layer_id=5827&rid=" + rid;
         UnityWebRequest timeTable = UnityWebRequest.Post(pathTimeTable, formData);
         yield return timeTable.SendWebRequest();
-        yield return new WaitForSeconds(1);
         if (IsError(timeTable)) yield break;
         UnityEngine.Debug.Log(timeTable.downloadHandler.text);
         ParseTrainData(timeTable.downloadHandler.text, date);
@@ -108,7 +107,7 @@ public class GetTimetableClass : MonoBehaviour
         
         foreach(string option in options)
         {
-            if (option.IndexOf(target + "\"") > -1)
+            if (option.IndexOf(target + "\"") > -1 || option.IndexOf(target + " (ВСЕ ВОКЗАЛЫ)") > -1)
             {
                 var dict = option.Split(new[] {','})
                     .Select(part => part.Split(':'))
@@ -159,22 +158,17 @@ public class GetTimetableClass : MonoBehaviour
                     cars.Clear();
                 }
                 train = dict;
-                /*
-                foreach (var item in dict)
-                {
-                    ftext.text += item.Key + " " + item.Value + "\n";
-                }
-                */
             }
             else if (dict.ContainsKey("\"carDataType")) cars.Add(dict);
             else if (dict.ContainsKey("\"message"))
             {
-                alert.text = dict["\"message"].Replace("\"", string.Empty) + " " + date;
+                alert.text = dict["\"message"].Replace("\"", string.Empty) + "\nВыбранная дата: " + date;
                 return true;
             }
             count++;
             
         }
+        alert.text = "";
         GenerateItem(train, cars);
         return true;
     }
@@ -191,7 +185,7 @@ public class GetTimetableClass : MonoBehaviour
         string date1 = train["\"date1"].Replace("\"", string.Empty);
         string station1 = train["\"station1"].Replace("\"", string.Empty);
 
-        string timeInWay = train["\"timeInWay"].Replace("\"", string.Empty);
+        string timeInWay = train["\"timeInWay"].Replace("\"", string.Empty).Replace(":", "ч. ") + "мин.";
 
         UnityEngine.Debug.Log("GenerateItem");
         GameObject scrollItemObj = Instantiate(scrollItemPrefab);
@@ -199,12 +193,12 @@ public class GetTimetableClass : MonoBehaviour
         scrollItemObj.transform.Find("TrainName").gameObject.GetComponent<Text>().text = name;
 
         scrollItemObj.transform.Find("InfoFrom").Find("TimeFrom").gameObject.GetComponent<Text>().text = time0;
-        scrollItemObj.transform.Find("InfoFrom").Find("StationFrom").gameObject.GetComponent<Text>().text = date0;
-        scrollItemObj.transform.Find("InfoFrom").Find("DateFrom").gameObject.GetComponent<Text>().text = station0;
+        scrollItemObj.transform.Find("InfoFrom").Find("DateFrom").gameObject.GetComponent<Text>().text = date0;
+        scrollItemObj.transform.Find("InfoFrom").Find("StationFrom").gameObject.GetComponent<Text>().text = station0;
 
         scrollItemObj.transform.Find("InfoTo").Find("TimeTo").gameObject.GetComponent<Text>().text = time1;
-        scrollItemObj.transform.Find("InfoTo").Find("StationTo").gameObject.GetComponent<Text>().text = date1;
-        scrollItemObj.transform.Find("InfoTo").Find("DateTo").gameObject.GetComponent<Text>().text = station1;
+        scrollItemObj.transform.Find("InfoTo").Find("DateTo").gameObject.GetComponent<Text>().text = date1;
+        scrollItemObj.transform.Find("InfoTo").Find("StationTo").gameObject.GetComponent<Text>().text = station1;
 
         scrollItemObj.transform.Find("Time").Find("TimeInWay").gameObject.GetComponent<Text>().text = timeInWay;
 
