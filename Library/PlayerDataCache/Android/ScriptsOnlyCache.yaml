@@ -1440,4 +1440,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Services Scene.unity
   - Assets/Scenes/Timetable Scene.unity
-  playerPath: C:/Unity/Design/run1.apk
+  playerPath: C:/Unity/Design/run.apk
