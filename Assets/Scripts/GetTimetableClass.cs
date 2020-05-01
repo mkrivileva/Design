@@ -63,6 +63,7 @@ public class GetTimetableClass : MonoBehaviour
             alert.text = "Неправильно введён пункт отправления";
             yield break;
         }
+        UnityEngine.Debug.Log(wwwCode.downloadHandler.text);
         UnityEngine.Debug.Log("code from = " + code0);
 
         //get code to
@@ -76,7 +77,7 @@ public class GetTimetableClass : MonoBehaviour
             alert.text = "Неправильно введён пункт назначения";
             yield break;
         }
-        UnityEngine.Debug.Log(code1);
+        UnityEngine.Debug.Log("code to = " + code1);
 
 
 
@@ -86,8 +87,10 @@ public class GetTimetableClass : MonoBehaviour
         yield return wwwRID.SendWebRequest();
         yield return new WaitForSeconds(1);
         if (IsError(wwwRID)) yield break;
-        string rid = GetCurrentRID(wwwRID.downloadHandler.text);
         UnityEngine.Debug.Log(wwwRID.downloadHandler.text);
+        string rid = GetCurrentRID(wwwRID.downloadHandler.text);
+        if (rid == "err")
+            yield break;
 
         //get TimeTable
         string pathTimeTable = "https://pass.rzd.ru/timetable/public/ru?layer_id=5827&rid=" + rid;
@@ -105,7 +108,7 @@ public class GetTimetableClass : MonoBehaviour
         
         foreach(string option in options)
         {
-            if (option.IndexOf(target) > -1)
+            if (option.IndexOf(target + "\"") > -1)
             {
                 var dict = option.Split(new[] {','})
                     .Select(part => part.Split(':'))
@@ -118,6 +121,14 @@ public class GetTimetableClass : MonoBehaviour
 
     string GetCurrentRID(string parseData)
     {
+        if (parseData.IndexOf("\"message\"") > -1)
+        {
+            parseData = parseData.Remove(0, parseData.IndexOf("\"message\"") + 11);
+            parseData = parseData.Remove(parseData.IndexOf("\","));
+            alert.text = parseData;
+            return "err";
+
+        }
         var dict = parseData.Split(new[] { ',' })
                 .Select(part => part.Split(':'))
                 .ToDictionary(split => split[0], split => split[1]);
