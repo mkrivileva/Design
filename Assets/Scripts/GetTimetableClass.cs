@@ -202,6 +202,8 @@ public class GetTimetableClass : MonoBehaviour
 
         scrollItemObj.transform.Find("Time").Find("TimeInWay").gameObject.GetComponent<Text>().text = timeInWay;
 
+        scrollItemObj.transform.Find("MoreInfo").gameObject.SetActive(false);
+
         scrollItemObj.transform.SetParent(scrollContent.transform, false);
     }
 

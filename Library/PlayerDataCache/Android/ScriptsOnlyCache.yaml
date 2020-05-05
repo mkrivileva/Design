@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - FantomLib.OKDialogController
     - GetTimetableClass
     - PluginTest3
+    - ScrollHandler
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -17,6 +18,14 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -52,7 +61,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -77,23 +92,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11902}
     - Class: 114
-      Script: {instanceID: 12138}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12372}
+      Script: {instanceID: 12374}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12960}
     - Class: 114
-      Script: {instanceID: 13258}
+      Script: {instanceID: 13260}
     - Class: 114
-      Script: {instanceID: 13426}
+      Script: {instanceID: 13428}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -123,7 +138,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -146,25 +167,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11902}
     - Class: 114
-      Script: {instanceID: 12138}
+      Script: {instanceID: 11966}
     - Class: 114
-      Script: {instanceID: 12372}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12454}
+      Script: {instanceID: 12374}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12456}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12606}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 13258}
+      Script: {instanceID: 12960}
     - Class: 114
-      Script: {instanceID: 13344}
+      Script: {instanceID: 13260}
     - Class: 114
-      Script: {instanceID: 13426}
+      Script: {instanceID: 13346}
+    - Class: 114
+      Script: {instanceID: 13428}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -662,6 +685,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: FantomLib
     className: QRCodeScannerController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScrollHandler
   - hash:
       serializedVersion: 2
       Hash: a2d45ae6df0a10c85fd20bb5edf13345
