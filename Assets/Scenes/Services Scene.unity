@@ -2839,7 +2839,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1197238621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1622059968}
+        m_MethodName: Show
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0417\u0430\u043B \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u043D\u043E\u0439
+            \u043A\u043E\u043C\u0444\u043E\u0440\u0442\u043D\u043E\u0441\u0442\u0438&&\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:&-
+            \u041F\u0440\u0435\u0431\u044B\u0432\u0430\u043D\u0438\u0435 \u0432 \u043D\u0435\u043C
+            \u043F\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u0430 \u0441\u0442\u0430\u0440\u0448\u0435
+            5 \u043B\u0435\u0442 \u0432 \u0447\u0430\u0441 \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442
+            100 \u0440\u0443\u0431\u043B\u0435\u0439&- \u041F\u0440\u043E\u0434\u043B\u0435\u043D\u0438\u0435
+            \u043F\u0440\u0435\u0431\u044B\u0432\u0430\u043D\u0438\u044F \u2013 70
+            \u0440\u0443\u0431\u043B\u0435\u0439 \u0432 \u0447\u0430\u0441.&&\u0412
+            \u044D\u0442\u043E\u043C \u0437\u0430\u043B\u0435 \u043F\u0430\u0441\u0441\u0430\u0436\u0438\u0440
+            \u043C\u043E\u0436\u0435\u0442 \u0441\u043A\u043E\u0440\u043E\u0442\u0430\u0442\u044C
+            \u0432\u0440\u0435\u043C\u044F \u0434\u043E \u043F\u043E\u0435\u0437\u0434\u0430,
+            \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0438\u0432\u0448\u0438\u0441\u044C
+            \u043D\u0430 \u043A\u043E\u043C\u0444\u043E\u0440\u0442\u043D\u043E\u043C
+            \u0434\u0438\u0432\u0430\u043D\u0435. \u041A \u0435\u0433\u043E \u0443\u0441\u043B\u0443\u0433\u0430\u043C
+            \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u044B
+            \u0436\u0443\u0440\u043D\u0430\u043B\u044B, \u0433\u0430\u0437\u0435\u0442\u044B,
+            \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0442\u0435\u043B\u0435\u043F\u0435\u0440\u0435\u0434\u0430\u0447.&&\u0412
+            \u0437\u0430\u043B\u0435 \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u043D\u043E\u0439
+            \u043A\u043E\u043C\u0444\u043E\u0440\u0442\u043D\u043E\u0441\u0442\u0438
+            \u0435\u0441\u0442\u044C \u0437\u043E\u043D\u0430, \u0433\u0434\u0435
+            \u043F\u0430\u0441\u0441\u0430\u0436\u0438\u0440 \u043C\u043E\u0436\u0435\u0442
+            \u0437\u0430\u0440\u044F\u0434\u0438\u0442\u044C \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u044B\u0435
+            \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430. \u0422\u0430\u043A\u0436\u0435
+            \u043F\u0440\u0435\u0434\u0443\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u0430
+            \u0434\u0435\u0442\u0441\u043A\u0430\u044F \u0437\u043E\u043D\u0430,
+            \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u043D\u0430\u044F
+            \u0438\u0433\u0440\u0443\u0448\u043A\u0430\u043C\u0438, \u0438\u0433\u0440\u043E\u0432\u044B\u043C
+            \u0441\u0442\u043E\u043B\u0438\u043A\u043E\u043C \u0438 \u0434\u043E\u0441\u043A\u043E\u0439
+            \u0434\u043B\u044F \u0440\u0438\u0441\u043E\u0432\u0430\u043D\u0438\u044F."
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1197238621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3767,7 +3806,27 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1550153238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1622059968}
+        m_MethodName: Show
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0422\u0443\u0430\u043B\u0435\u0442&&\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:&-
+            15 \u0440\u0443\u0431\u043B\u0435\u0439 (\u043F\u0440\u0438 \u043D\u0430\u043B\u0438\u0447\u0438\u0438
+            \u043F\u0440\u043E\u0435\u0437\u0434\u043D\u043E\u0433\u043E \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0430
+            - \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E. \u0422\u0443\u0430\u043B\u0435\u0442\u044B
+            \u0434\u043B\u044F \u043C\u0430\u043B\u043E\u043C\u043E\u0431\u0438\u043B\u044C\u043D\u044B\u0445
+            \u043F\u0430\u0441\u0441\u0430\u0436\u0438\u0440\u043E\u0432 - \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E)&-
+            \u0414\u0443\u0448- 100 \u0440\u0443\u0431\u043B\u0435\u0439&- \u0423\u0441\u043B\u0443\u0433\u0438
+            \u0441\u0442\u0438\u0440\u043A\u0438 / \u0433\u043B\u0430\u0436\u043A\u0438
+            \u0431\u0435\u043B\u044C\u044F \u2013 100 \u0440\u0443\u0431\u043B\u0435\u0439
+            / 100 \u0440\u0443\u0431\u043B\u0435\u0439."
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1550153238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4298,6 +4357,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acf18b9b5c452e74689b2f9e1b4ee78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1622059968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114688675333567004, guid: 3d7d543f3ca930c439195808366c6388,
+    type: 3}
+  m_PrefabInstance: {fileID: 1622059966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7103fea428fe7f14e9d5648c44543f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1624598652
@@ -6179,7 +6250,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2006207838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1622059968}
+        m_MethodName: Show
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0413\u043E\u0441\u0442\u0438\u043D\u0438\u0446\u0430&&\u0412\u0441\u0435
+            \u043D\u043E\u043C\u0435\u0440\u0430 \u043E\u0441\u043D\u0430\u0449\u0435\u043D\u044B
+            \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C \u0441\u0430\u043D\u0443\u0437\u043B\u043E\u043C.
+            \u0412\u043E \u0432\u0441\u0435\u0445 \u043A\u043E\u043C\u043D\u0430\u0442\u0430\u0445
+            \u0435\u0441\u0442\u044C \u0442\u0435\u043B\u0435\u0432\u0438\u0437\u043E\u0440,
+            \u0445\u043E\u043B\u043E\u0434\u0438\u043B\u044C\u043D\u0438\u043A \u0438
+            \u0447\u0430\u0439\u043D\u0438\u043A. \u0415\u0441\u0442\u044C \u043D\u043E\u043C\u0435\u0440\u0430
+            \u043E\u0434\u043D\u043E\u043C\u0435\u0441\u0442\u043D\u044B\u0435 \u0438
+            \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0435. \u0415\u0441\u0442\u044C
+            \u043D\u043E\u043C\u0435\u0440\u0430 \u043A\u043B\u0430\u0441\u0441\u0430
+            \xAB\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\xBB \u0438 \u043A\u043B\u0430\u0441\u0441\u0430
+            \xAB\u041B\u044E\u043A\u0441\xBB&&\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:&-
+            \u0441\u0430\u043C\u044B\u0439 \u0434\u0435\u0448\u0435\u0432\u044B\u0439
+            \u043D\u043E\u043C\u0435\u0440 500 \u0440\u0443\u0431\u043B\u0435\u0439
+            \u0432 \u0441\u0443\u0442\u043A\u0438&- \u0441\u0430\u043C\u044B\u0439
+            \u0434\u043E\u0440\u043E\u0433\u043E\u0439 \u2013 2000 \u0440\u0443\u0431\u043B\u0435\u0439
+            \u0432 \u0441\u0443\u0442\u043A\u0438&&\u0422\u0435\u043B\u0435\u0444\u043E\u043D
+            \u0434\u043B\u044F \u0431\u0440\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F
+            \u043D\u043E\u043C\u0435\u0440\u043E\u0432: 8(3412)49-15-29."
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2006207838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6843,6 +6943,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaggaheRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 2397223854277174012, guid: ff4816d893b37874ebef906c9ce810c2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1622059968}
+    - target: {fileID: 2397223854277174012, guid: ff4816d893b37874ebef906c9ce810c2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397223854277174012, guid: ff4816d893b37874ebef906c9ce810c2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: "\u041A\u0430\u043C\u0435\u0440\u0430 \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F&&\u0427\u0442\u043E
+        \u043D\u0443\u0436\u043D\u043E:&- \u0438\u043C\u0435\u0442\u044C \u043F\u0430\u0441\u043F\u043E\u0440\u0442&-
+        \u0438\u043C\u0435\u0442\u044C \u043F\u0440\u043E\u0435\u0437\u0434\u043D\u043E\u0439
+        \u0431\u0438\u043B\u0435\u0442 &&\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:
+        200 \u0440\u0443\u0431 (\u0437\u0430 \u0441\u0443\u0442\u043A\u0438)  &&
+        \u041A\u0430\u043A \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F:&
+        \u041F\u043E\u0441\u043B\u0435 \u043F\u043E\u043A\u0443\u043F\u043A\u0438
+        \u0441\u043C\u0430\u0440\u0442-\u043A\u0430\u0440\u0442\u044B, \u043D\u0443\u0436\u043D\u043E
+        \u0443\u0441\u043F\u0435\u0442\u044C \u0440\u0430\u0437\u043C\u0435\u0441\u0442\u0438\u0442\u044C
+        \u0431\u0430\u0433\u0430\u0436 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
+        10-\u0442\u0438 \u043C\u0438\u043D\u0443\u0442, \u0438\u043D\u0430\u0447\u0435
+        \u043F\u043B\u0430\u0441\u0442\u0438\u043A\u043E\u0432\u044B\u0439 \u043A\u043B\u044E\u0447
+        \u0430\u043D\u043D\u0443\u043B\u0438\u0440\u0443\u0435\u0442\u0441\u044F,
+        \u0430 \u0432\u0440\u0435\u043C\u044F \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F
+        \u043F\u0440\u0438\u0434\u0435\u0442\u0441\u044F \u043E\u043F\u043B\u0430\u0442\u0438\u0442\u044C
+        \u0437\u0430\u043D\u043E\u0432\u043E.&&\u0417\u0430\u043F\u0440\u0435\u0449\u0435\u043D\u043E
+        \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \u043D\u0430 \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435:&\u0414\u043E\u043C\u0430\u0448\u043D\u0438\u0445
+        \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445, \u043F\u0442\u0438\u0446,
+        \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043E\u0435 \u0438 \u043E\u0433\u043D\u0435\u0441\u0442\u0440\u0435\u043B\u044C\u043D\u043E\u0435
+        \u043E\u0440\u0443\u0436\u0438\u0435, \u043F\u0441\u0438\u0445\u043E\u0442\u0440\u043E\u043F\u043D\u044B\u0435
+        \u0432\u0435\u0449\u0435\u0441\u0442\u0432\u0430, \u043D\u0430\u0440\u043A\u043E\u0442\u0438\u043A\u0438,
+        \u0441\u0438\u043B\u044C\u043D\u043E \u0437\u0430\u0433\u0440\u044F\u0437\u043D\u0435\u043D\u043D\u044B\u0435
+        \u0432\u0435\u0449\u0438, \u043E\u043F\u0430\u0441\u043D\u044B\u0435 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B.&&\u041D\u0435
+        \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u0442\u0441\u044F
+        \u0441\u0434\u0430\u0432\u0430\u0442\u044C \u0432 \u043A\u0430\u043C\u0435\u0440\u0443
+        \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F:&\u0414\u0435\u043D\u0435\u0436\u043D\u044B\u0435
+        \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430, \u0432\u0430\u0436\u043D\u044B\u0435
+        \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B, \u043F\u0440\u043E\u0447\u0438\u0435
+        \u0446\u0435\u043D\u043D\u043E\u0441\u0442\u0438. &&\u0412\u0440\u0435\u043C\u044F
+        \u0440\u0430\u0431\u043E\u0442\u044B: \u043A\u0440\u0443\u0433\u043B\u043E\u0441\u0443\u0442\u043E\u0447\u043D\u043E"
+      objectReference: {fileID: 0}
     - target: {fileID: 2397223854277174013, guid: ff4816d893b37874ebef906c9ce810c2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7052,27 +7196,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 147a0998f7db84244a8eb5dfa8fdf466,
+      objectReference: {fileID: 21300000, guid: fc21a6b32bf24a544aba8e26dd2c137d,
         type: 3}
     - target: {fileID: 4155134706235083334, guid: abcc0bcaf7434beebbceb29a80572a03,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4155134706235083334, guid: abcc0bcaf7434beebbceb29a80572a03,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4155134706235083334, guid: abcc0bcaf7434beebbceb29a80572a03,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000011304
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4155134706235083334, guid: abcc0bcaf7434beebbceb29a80572a03,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -258.33
+      value: -258
       objectReference: {fileID: 0}
     - target: {fileID: 4155134706805345298, guid: abcc0bcaf7434beebbceb29a80572a03,
         type: 3}
